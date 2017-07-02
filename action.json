@@ -14,7 +14,7 @@
   "conversations": {
     "conversation_1": {
       "name": "conversation_1",
-      "url": "YOUR_ENDPOINT_URL"
+      "url": "https://us-central1-infobeta-bd0a6.cloudfunctions.net/sayNumber"
     }
   }
 }
