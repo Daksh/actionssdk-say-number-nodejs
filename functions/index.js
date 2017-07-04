@@ -12,6 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+//<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+var firebase = require("firebase");
+
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyBV_tLD4C7so3xzSvoL3JfX940ONzxw9Dg",
+  authDomain: "infobeta-bd0a6.firebaseapp.com",
+  databaseURL: "https://infobeta-bd0a6.firebaseio.com",
+  projectId: "infobeta-bd0a6",
+  storageBucket: "infobeta-bd0a6.appspot.com",
+  messagingSenderId: "995216830487"
+};
+firebase.initializeApp(config);
+
 'use strict';
 
 process.env.DEBUG = 'actions-on-google:*';
@@ -31,7 +45,7 @@ exports.sayNumber = functions.https.onRequest((request, response) => {
   function mainIntent (app) {
     console.log('mainIntent');
     let inputPrompt = app.buildInputPrompt(true, '<speak>Hi! <break time="1"/> ' +
-      'I can read out an ordinal like ' +
+      'I can read out an ordinal likee ' +
       '<say-as interpret-as="ordinal">123</say-as>. Say a number.</speak>', NO_INPUTS);
     app.ask(inputPrompt);
   }
@@ -41,7 +55,7 @@ exports.sayNumber = functions.https.onRequest((request, response) => {
     if (app.getRawInput() === 'bye') {
       app.tell('Goodbye!');
     } else {
-      let inputPrompt = app.buildInputPrompt(true, '<speak>You said, <say-as interpret-as="ordinal">' +
+      let inputPrompt = app.buildInputPrompt(true, '<speak>You said, Meine suna, <say-as interpret-as="ordinal">' +
         app.getRawInput() + '</say-as></speak>', NO_INPUTS);
       app.ask(inputPrompt);
     }
